@@ -11,6 +11,10 @@ plt.plot(x,y)
 plt.xlabel("thesis grade")
 plt.ylabel("final grade")
 
+plt.savefig("grades.png",format="png")
+plt.savefig("grades.pdf",format="pdf")
+
+
 plt.show()
 
 
