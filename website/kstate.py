@@ -144,7 +144,9 @@ class kstate(webstate):
     return "If you choose the following optional courses, this would average to those numbers<br>"+"<br>".join([s._vishelper(ac) for ac in s["results"]])+"<br>"+generatelink("gotologgedin","Back")
 
   def init_calculating(s,fro):
-    if not s.hasvar("thesisgrade","thesiscp","totalcp","optional","needed"):s.setstate("missingstuff")
+    if not s.hasvar("thesisgrade","thesiscp","totalcp","optional","needed"):
+      s.setstate("missingstuff")
+      return 
     s["results"]=doit(**s.q)
     s.setstate("results")
   def vis_missingstuff(s):
