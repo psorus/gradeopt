@@ -41,6 +41,7 @@ class controller():
 
 
   def main(s):
+    
     return s.callfunc("main")
     ret="Hello World "+str(s.id)
     if not "key" in session.keys():
@@ -67,6 +68,7 @@ class handler(controller):
   
   
   def main(s,function="",**kw):
+    if "." in function:return ""
     ret=None
     if not (function=="" or function[0]=="_"):ret=s.callfunc(function,**kw)#can only call functions that are not of type _something
     if  type(ret) in [str,bool,float,int]:

@@ -107,6 +107,13 @@ def optimize(q):
   return fulleval(q["optional"])
 
 
+def doit(**kw):
+  kw["neccesary"]=kw["needed"]
+  kw["thesis_grade"]=kw["thesisgrade"]
+  kw["thesis_cp"]=kw["thesiscp"]
+  kw["total_cp"]=kw["totalcp"]
+  return optimize(kw)[:50]
+
 
 def loope(q):
   global ncp,nsm,thesiscp,coursecp,thesisgrade

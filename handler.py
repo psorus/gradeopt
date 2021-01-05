@@ -63,9 +63,12 @@ class handler(controller):
   def addroute(s):
     s.app.add_url_rule("/<function>","main",s.main)
     s.app.add_url_rule("/","main",s.main)
+    
   
   
   def main(s,function=""):
+    print("calling function",function)
+    if "." in function:return None
     ret=None
     if not (function=="" or function[0]=="_"):ret=s.callfunc(function)#can only call functions that are not of type _something
     if  type(ret) in [str,bool,float,int]:

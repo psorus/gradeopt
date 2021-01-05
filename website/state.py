@@ -165,4 +165,16 @@ Accessing any state variable calls returns values modified by vision_[variable](
       return getattr(s,f)(state,*p,**kw)
     
     raise Exception("The function "+str(f)+" is not defined for the current state"+str(state))
+  
+  def hasvar(s,*q):
+    for zw in q:
+      if not zw in s.q.keys():return False
+    return True
+
+  def asdict(s):
+    return {"state":s.getstate(),"variables":s.q}
+  def loaddict(s,d):
+    s.setstate(d["state"])
+    s.q=d["variables"]
+  
 

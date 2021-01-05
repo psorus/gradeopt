@@ -92,12 +92,13 @@ def gradebytgrade(tgrade,o):
   return bestgrade(o)
 
 tgrade=np.arange(1.0,4.0001,0.01)
+tgrade=[1.0,1.3,1.7,2.0,2.3,2.7,3.0,3.3,3.7,4.0]
 grades=[gradebytgrade(zw,q["optional"]) for zw in tgrade]
 
 print(tgrade)
 print(grades)
 
-np.savez_compressed("output",x=tgrade,y=grades)
+# np.savez_compressed("output",x=tgrade,y=grades)
 
 
 
